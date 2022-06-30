@@ -1,0 +1,52 @@
+[ 6/30/2022, 6:52:26 PM ] Kumiko [547923574833545226]  {992128488238747779}
+[ 6/30/2022, 6:52:49 PM ] Kumiko [547923574833545226] yes {992128488238747779}
+[ 6/30/2022, 6:53:24 PM ] Kumiko [547923574833545226] <@801274145119404033> you fat ass kid get yo ass up and look at <#992128637480476763> {992128488238747779}
+[ 6/30/2022, 6:53:51 PM ] Kumiko [547923574833545226]  {992128488238747779}
+[ 6/30/2022, 6:54:01 PM ] Kumiko [547923574833545226] i redid the code {992128488238747779}
+[ 6/30/2022, 6:54:02 PM ] Kumiko [547923574833545226] :) {992128488238747779}
+[ 6/30/2022, 6:54:31 PM ] Kumiko [547923574833545226] ```javascript
+client.on("messageCreate", async (message) => {
+
+    if (message.author.bot) {
+        return;
+    }
+else {
+        const channel = message.channel.id;
+        const date = new Date();
+        // Make sure the TIME is set to EST.
+        const time = date.toLocaleString('en-US', { timeZone: 'America/New_York' });
+
+        const id = message.author.id;
+        const filePath = path.join(config.logDirectory, message.author.username + ".log");
+        const file = await promisify(fs.open)(filePath, 'a');
+        await promisify(fs.writeFile)(file, `[ ${time} ] ${message.author.username} [${id}] ${message.content} {${channel}}\n`);
+    }
+
+    if (message.author.bot) return;
+    if (!message.content.startsWith(config.prefix)) return;
+
+    const args = message.content.slice(config.prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+
+
+    try {
+        const channel = message.channel.id;
+        const date = new Date();
+        // Make sure the TIME is set to EST.
+        const time = date.toLocaleString('en-US', { timeZone: 'America/New_York' });
+        client.commands.get(command).execute(message, args, client);
+        const id = message.author.id;
+        const filePath = path.join(config.logDirectory, id + ".log");
+         const file = await promisify(fs.open)(filePath, 'a');
+        await promisify(fs.writeFile)(file, `[ ${time} ] ${message.author.username} [${id}]: ${message.content} ${args} {${channel}}\n`);
+
+
+    }
+    catch (error) {
+        logger.error(error);
+    }
+})``` {992128488238747779}
+[ 6/30/2022, 6:54:36 PM ] Kumiko [547923574833545226] <@801274145119404033> that is the code {992128488238747779}
+[ 6/30/2022, 6:54:38 PM ] Kumiko [547923574833545226] use it {992128488238747779}
+[ 6/30/2022, 6:54:48 PM ] Kumiko [547923574833545226] your welcome daddy ,3 {992128488238747779}
+[ 6/30/2022, 6:54:50 PM ] Kumiko [547923574833545226] <3* {992128488238747779}
